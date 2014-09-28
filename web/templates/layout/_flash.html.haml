@@ -1,0 +1,5 @@
+#flash
+  = for message <- Flash.get(@conn) do
+    %div{class: "flash-#{elem(message, 0)}"}
+      = elem(message, 1)
+  = end

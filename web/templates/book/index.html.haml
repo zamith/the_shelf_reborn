@@ -1,0 +1,6 @@
+%section.books
+  %ul#book-list.gallery
+    = for book <- @books do
+      %li
+        = book.title
+    = end

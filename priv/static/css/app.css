@@ -1,0 +1,15 @@
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.flash-notice {
+  width: 100%;
+  padding: 16px;
+  background-color: #31bf76;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+}

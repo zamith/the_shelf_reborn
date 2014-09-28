@@ -1,0 +1,9 @@
+= render "_doctype.html"
+
+= render "_head.html"
+
+%body
+  = render "_flash.html", [conn: @conn]
+
+  %section.main-content
+    = @inner
