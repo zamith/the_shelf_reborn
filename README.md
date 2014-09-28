@@ -8,6 +8,17 @@ To start your new Phoenix application you have to:
 
 Now you can visit `localhost:4000` from your browser.
 
+## Setup the database
+
+1. Install postgres and open psql
+2. Insert the following commands:
+
+```
+create user phoenix with password 'phoenix';
+create database the_shelf owner phoenix;
+grant all privileges on database the_shelf to phoenix;
+```
+
 ## Insert dummy data
 
 1. Open iex with the project loaded with `iex -S mix`
