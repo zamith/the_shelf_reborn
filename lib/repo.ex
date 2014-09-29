@@ -3,16 +3,7 @@ defmodule Repo do
 
   defoverridable [insert: 2]
   def insert(model, opts) do
-    module = model.__struct__
-
-    if function_exported?(module, :validate, 1) do
-      case module.validate(model) do
-        [] -> super(model, opts)
-        errors -> errors
-      end
-    else
-      super(model, opts)
-    end
+    wrap_with_validations(model, opts, fn -> super(model, opts) end)
   end
 
   def conf do
@@ -21,5 +12,18 @@ defmodule Repo do
 
   def priv do
     app_dir(:the_shelf, "priv/repo")
+  end
+
+  defp wrap_with_validations(model, opts, callback) do
+    module = model.__struct__
+
+    if function_exported?(module, :validate, 1) do
+      case module.validate(model) do
+        [] -> callback.()
+        errors -> errors
+      end
+    else
+      callback.()
+    end
   end
 end
