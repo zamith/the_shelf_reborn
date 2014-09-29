@@ -34,7 +34,8 @@ defmodule TheShelf.Mixfile do
       {:cowboy, "~> 1.0.0"},
       {:phoenix_haml, "~> 0.0.3"},
       {:postgrex, ">= 0.0.0"},
-      {:ecto, "~> 0.2.0"}
+      {:ecto, "~> 0.2.0"},
+      {:sass_elixir, git: "git://github.com/zamith/sass_elixir.git"}
     ]
   end
 end

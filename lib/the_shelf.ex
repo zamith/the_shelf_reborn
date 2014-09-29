@@ -7,7 +7,8 @@ defmodule TheShelf do
     import Supervisor.Spec, warn: false
 
     children = [
-      worker(Repo, [])
+      worker(Repo, []),
+      worker(SassElixir, [[operation: :compile]])
     ]
 
     opts = [strategy: :one_for_one, name: TheShelf.Supervisor]
