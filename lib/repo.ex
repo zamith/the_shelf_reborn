@@ -3,9 +3,15 @@ defmodule Repo do
 
   defoverridable [insert: 2]
   def insert(model, opts) do
-    case model.__struct__.validate(model) do
-      [] -> super(model, opts)
-      errors -> errors
+    module = model.__struct__
+
+    if function_exported?(module, :validate, 1) do
+      case module.validate(model) do
+        [] -> super(model, opts)
+        errors -> errors
+      end
+    else
+      super(model, opts)
     end
   end
 
