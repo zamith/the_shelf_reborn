@@ -28,13 +28,7 @@ grant all privileges on database the_shelf to phoenix;
 ## Running tests
 
 1. Install PhantomJS
-
-2. Run `phantomjs --webdriver=8910` and `mix phoenix.start`
-
-or
-
-2. Install foreman and run `foreman start`
-
+2. Run `phantomjs --webdriver=8910` and `mix phoenix.start` or Install foreman and run `foreman start`
 3. Run `mix test`
 
 ## Notes
