@@ -1,2 +1,2 @@
 Phoenix.CodeReloader.reload!
-ExUnit.start
+ExUnit.start [max_cases: 5]

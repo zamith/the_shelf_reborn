@@ -26,6 +26,8 @@ config :logger, :console,
 config :phoenix, :template_engines,
     haml: PhoenixHaml.Engine
 
+config :hound, driver: "phantomjs"
+
 # Import environment specific config. Note, this must remain at the bottom of
 # this file to properly merge your previous config entries.
 import_config "#{Mix.env}.exs"

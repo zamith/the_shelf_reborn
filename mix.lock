@@ -3,6 +3,10 @@
   "cowlib": {:package, "1.0.0"},
   "decimal": {:package, "0.2.5"},
   "ecto": {:package, "0.2.5"},
+  "hound": {:git, "git://github.com/HashNuke/hound.git", "72a9a93fef52621b062821323fe3b5f1d9ab8d3f", []},
+  "ibrowse": {:git, "git://github.com/cmullaparthi/ibrowse.git", "d2e369ff42666c3574b8b7ec26f69027895c4d94", [tag: "v4.1.1"]},
+  "jsex": {:package, "2.0.0"},
+  "jsx": {:package, "2.1.1"},
   "linguist": {:package, "0.1.2"},
   "phoenix": {:package, "0.4.1"},
   "phoenix_haml": {:package, "0.0.5"},
@@ -11,4 +15,6 @@
   "poolboy": {:package, "1.2.1"},
   "postgrex": {:package, "0.6.0"},
   "ranch": {:package, "1.0.0"},
-  "sass_elixir": {:git, "git://github.com/zamith/sass_elixir.git", "50507d8065f964ed4105a7ff5d3f396a9205a9ca", []}}
+  "rotor": {:package, "0.2.2"},
+  "sass": {:git, "git://github.com/danielfarrell/sass.ex.git", "479048c5d95a5a14b78420421fbbd0ea6c5277f7", []},
+  "sass_rotor": {:git, "https://github.com/danielfarrell/sass_rotor", "0f590aa2836348fd08c608a177c7d695b968ef17", []}}

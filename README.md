@@ -25,6 +25,18 @@ grant all privileges on database the_shelf to phoenix;
 2. Create a book with `book = %Book{title: "Something"}`
 3. Insert it into the database with `Repo.insert(book)`
 
+## Running tests
+
+1. Install PhantomJS
+
+2. Run `phantomjs --webdriver=8910` and `mix phoenix.start`
+
+or
+
+2. Install foreman and run `foreman start`
+
+3. Run `mix test`
+
 ## Notes
 
 * If you choose to change the application's structure, you could manually start the router from your code like this `TheShelf.Router.start`

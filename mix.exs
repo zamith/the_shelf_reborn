@@ -5,37 +5,38 @@ defmodule TheShelf.Mixfile do
     [ app: :the_shelf,
       version: "0.0.1",
       elixir: "~> 1.0.0-rc1",
-      elixirc_paths: ["lib", "web"],
+      elixirc_paths: ["lib", "web", "test"],
       deps: deps ]
   end
 
   # Configuration for the OTP application
   def application do
+    [ mod: { TheShelf, [] },
+      applications: apps(Mix.env) ]
+  end
+
+  defp deps do
     [
-      mod: { TheShelf, [] },
-      applications: [
-        :phoenix,
-        :cowboy,
-        :logger,
-        :postgrex,
-        :ecto
-      ]
+      {:cowboy, "~> 1.0.0"},
+      {:ecto, "~> 0.2.0"},
+      {:hound, git: "git://github.com/HashNuke/hound.git"},
+      {:phoenix, "0.4.1"},
+      {:phoenix_haml, "~> 0.0.3"},
+      {:postgrex, ">= 0.0.0"},
+      {:rotor, ">= 0.0.0"},
+      {:sass_rotor, git: "https://github.com/danielfarrell/sass_rotor"}
     ]
   end
 
-  # Returns the list of dependencies in the format:
-  # { :foobar, git: "https://github.com/elixir-lang/foobar.git", tag: "0.1" }
-  #
-  # To specify particular versions, regardless of the tag, do:
-  # { :barbat, "~> 0.1", github: "elixir-lang/barbat" }
-  defp deps do
-    [
-      {:phoenix, "0.4.1"},
-      {:cowboy, "~> 1.0.0"},
-      {:phoenix_haml, "~> 0.0.3"},
-      {:postgrex, ">= 0.0.0"},
-      {:ecto, "~> 0.2.0"},
-      {:sass_elixir, git: "git://github.com/zamith/sass_elixir.git"}
-    ]
+  defp apps(:test) do
+    [ :hound ] ++ apps
+  end
+  defp apps(_), do: apps
+  defp apps do
+    [ :phoenix,
+      :cowboy,
+      :logger,
+      :postgrex,
+      :ecto ]
   end
 end

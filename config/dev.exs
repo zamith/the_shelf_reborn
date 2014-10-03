@@ -15,4 +15,3 @@ config :phoenix, :code_reloader,
 config :logger, :console,
   level: :debug
 
-
