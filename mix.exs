@@ -23,7 +23,7 @@ defmodule TheShelf.Mixfile do
       {:phoenix, "0.4.1"},
       {:phoenix_haml, "~> 0.0.3"},
       {:postgrex, ">= 0.0.0"},
-      {:rotor, ">= 0.0.0"},
+      {:rotor, git: "https://github.com/hashnuke/rotor", override: true},
       {:sass_rotor, git: "https://github.com/danielfarrell/sass_rotor"}
     ]
   end
@@ -37,6 +37,7 @@ defmodule TheShelf.Mixfile do
       :cowboy,
       :logger,
       :postgrex,
-      :ecto ]
+      :ecto,
+      :rotor ]
   end
 end

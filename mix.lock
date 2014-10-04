@@ -15,6 +15,6 @@
   "poolboy": {:package, "1.2.1"},
   "postgrex": {:package, "0.6.0"},
   "ranch": {:package, "1.0.0"},
-  "rotor": {:package, "0.2.2"},
+  "rotor": {:git, "https://github.com/hashnuke/rotor", "1c54d61fa33f09cf506ed8713b581be96a5fb4db", []},
   "sass": {:git, "git://github.com/danielfarrell/sass.ex.git", "479048c5d95a5a14b78420421fbbd0ea6c5277f7", []},
   "sass_rotor": {:git, "https://github.com/danielfarrell/sass_rotor", "0f590aa2836348fd08c608a177c7d695b968ef17", []}}

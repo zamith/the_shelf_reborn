@@ -16,10 +16,10 @@
     background-color: $body-background-color
   // Override browser's autofill highlighting
   &:-webkit-autofill
-    +single-box-shadow($field-background-color, 0, 0, 0, 50px, inset)
+    +single-box-shadow(0, 0, 0, 50px, $field-background-color, inset)
     -webkit-text-fill-color: $base-text-color
     &:focus
-      +single-box-shadow($body-background-color, 0, 0, 0, 50px, inset)
+      +single-box-shadow(0, 0, 0, 50px, $body-background-color, inset)
 
 
 %search-field-style
