@@ -7,4 +7,8 @@ defmodule TheShelf.BookController do
     |> Flash.put(:notice, "Welcome!")
     |> render "index", [ books: Repo.all(Book) ]
   end
+
+  def new(conn, _params) do
+    render conn, "new"
+  end
 end

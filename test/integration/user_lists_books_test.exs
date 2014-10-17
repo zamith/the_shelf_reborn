@@ -7,7 +7,7 @@ defmodule Integration.UserListsBooksTest do
   test "user can see a book on the homepage" do
     persisted_book = create_available_book
 
-    navigate_to("http://localhost:4000/")
+    navigate_to("/")
 
     get_all_book_titles
     |> Enum.member?(persisted_book.title)

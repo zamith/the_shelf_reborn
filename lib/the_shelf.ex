@@ -10,10 +10,6 @@ defmodule TheShelf do
       worker(Repo, [])
     ]
 
-    if Mix.env == :dev do
-      TheShelf.Initializers.start_rotors
-    end
-
     opts = [strategy: :one_for_one, name: TheShelf.Supervisor]
     Supervisor.start_link(children, opts)
   end

@@ -19,7 +19,7 @@ defmodule TheShelf.Mixfile do
     [
       {:cowboy, "~> 1.0.0"},
       {:ecto, "~> 0.2.0"},
-      {:hound, git: "git://github.com/HashNuke/hound.git"},
+      {:hound, path: "../hound"},
       {:phoenix, "0.4.1"},
       {:phoenix_haml, "~> 0.0.3"},
       {:postgrex, ">= 0.0.0"},
