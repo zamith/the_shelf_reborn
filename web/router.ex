@@ -1,7 +1,9 @@
 defmodule TheShelf.Router do
   use Phoenix.Router
 
-  get "/", TheShelf.BookController, :index, as: :books
+  scope alias: TheShelf do
+    get "/", BookController, :index, as: :books
 
-  resources "/books", TheShelf.BookController, only: [:new, :create]
+    resources "/books", BookController, only: [:new, :create]
+  end
 end
