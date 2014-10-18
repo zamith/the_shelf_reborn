@@ -10,9 +10,11 @@ defmodule Integration.UserAddsBookTest do
     find_element(:id, "book_title") |> input_into_field("A book")
     find_element(:id, "book_authors") |> input_into_field("An author")
 
-    click({:type, "submit"})
+    click({:id, "add_book"})
 
-    book = Repo.all |> List.last
-    IO.puts book
+    book = Repo.all(Book) |> List.last
+
+    refute is_nil(book)
+    assert book.title == "A book"
   end
 end

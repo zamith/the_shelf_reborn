@@ -11,4 +11,10 @@ defmodule TheShelf.BookController do
   def new(conn, _params) do
     render conn, "new"
   end
+
+  def create(conn, params) do
+    %Book{title: params["book_title"], authors: params["book_authors"], state: "available"}
+    |> Repo.insert
+    redirect(conn, "/")
+  end
 end
