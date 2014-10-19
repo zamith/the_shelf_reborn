@@ -7,6 +7,21 @@ defmodule Repo do
   end
 
   def conf do
+    url(Mix.env)
+  end
+
+  defp url(:prod) do
+    parse_url "ecto://" <>
+      System.get_env("DB_USER") <>
+      ":" <>
+      System.get_env("DB_PASS") <>
+      "@" <>
+      System.get_env("DB_HOST") <>
+      "/" <>
+      System.get_env("DB_NAME")
+  end
+
+  defp url(_) do
     parse_url "ecto://phoenix:phoenix@localhost/the_shelf"
   end
 
