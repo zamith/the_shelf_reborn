@@ -10,7 +10,7 @@ defmodule Integration.UserAddsBookTest do
     find_element(:id, "book_title") |> input_into_field("A book")
     find_element(:id, "book_authors") |> input_into_field("An author")
 
-    click({:id, "add_book"})
+    click({:css, "input[type=submit]"})
 
     book = Repo.all(Book) |> List.last
 
